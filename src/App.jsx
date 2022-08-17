@@ -1,38 +1,21 @@
-import React from "react";
-
+import React from 'react';
+import './App.css';
+import add, { divide, mul, sub } from './Calculator';
 
 function App() {
-// new Date(year, month, day, hours, minutes, seconds, milliseconds)
-let currDate = new Date(2022, 8, 16, 20);
-currDate = currDate.getHours();
-let greeting = '';
-const cssStyle = { };
-
-if(currDate >= 1 && currDate < 12){
-  greeting = 'Good Morning';
-  cssStyle.color = 'green';
-}
-else if(currDate >= 12 && currDate < 16){
-  greeting = 'Good Afternoon';
-  cssStyle.color = 'red';
-}
-else if(currDate >= 16 && currDate < 20){
-  greeting = 'Good Evening';
-  cssStyle.color = 'orange';
-}
-else{
-  greeting = 'Good Night';
-  cssStyle.color = 'blue';
-}
-
-return(
-    <>
+  return(
+  <>
     <div>
-      <h1>Hello Sir, <span style={cssStyle}>{greeting}</span></h1>
+      <h1>Basic Calculator App</h1>
+      <ul>
+        <li>Sum of two numbers is: <span className='calc'>{add(40, 4)}</span></li>
+        <li>Subtraction of two numbers is: <span className='calc'>{sub(40, 4)}</span></li>
+        <li>Division of two numbers is: <span className='calc'>{divide(4, 3)}</span></li>
+        <li>Multiplication of two numbers is: <span className='calc'>{mul(40, 4)}</span></li>
+      </ul>
     </div>
   </>
-);
-
+  );
 }
 
 export default App;
