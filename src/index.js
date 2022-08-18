@@ -1,11 +1,25 @@
-import React from "react";
+import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Card from './Card';
+import Sdata from './Sdata';
+import './index.css';
 
 ReactDOM.render(
-  <App />,
+  <>
+
+    <h1 className='heading_style'>List of Top 3 Netflix Series</h1>
+    {Sdata.map( val => {
+      return(
+        <Card 
+          imgSrc = {val.imgSrc}
+          title = {val.title}
+          Sname = {val.Sname}
+          link = {val.link}
+        />
+          );
+    })}
+  </>,
   document.getElementById('root')
 );
 
-// challenge 4
-// Basic Calculator App
+// https://www.netflix.com/in/
