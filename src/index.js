@@ -1,24 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Card from './Card';
-import Sdata from './Sdata';
 import './index.css';
+import App from './App';
 
 ReactDOM.render(
-  <>
-
-    <h1 className='heading_style'>List of Top 3 Netflix Series</h1>
-    {Sdata.map( val => {
-      return(
-        <Card 
-          imgSrc = {val.imgSrc}
-          title = {val.title}
-          Sname = {val.Sname}
-          link = {val.link}
-        />
-          );
-    })}
-  </>,
+  <App />,
   document.getElementById('root')
 );
 
